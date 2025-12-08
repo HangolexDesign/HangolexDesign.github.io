@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangolex – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Portfolio de Hangolex – miniatures YouTube, overlays, bannières et visuels pour créateurs de contenu.">
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0d1018;
+      --accent: #32e0ff;
+      --accent-soft: rgba(50, 224, 255, 0.1);
+      --text: #f5f5f5;
+      --muted: #9ca3af;
+      --card: #101320;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020308 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.25rem 0 1.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 1.5rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 10px 35px rgba(50, 224, 255, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .hero-right {
+      justify-self: flex-end;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #020617, #050816);
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1.3rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+      max-width: 320px;
+    }
+
+    .hero-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-title {
+      font-weight: 600;
+    }
+
+    .hero-card-pill {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(50, 224, 255, 0.4);
+    }
+
+    .hero-card-preview {
+      border-radius: 0.7rem;
+      background: radial-gradient(circle at top, #1f2937, #020617 65%);
+      height: 150px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.8rem;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .hero-card-metric span {
+      display: block;
+    }
+
+    .hero-card-metric strong {
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .section {
+      padding: 2.5rem 0 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.4rem;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .project {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-thumb {
+      height: 150px;
+      background: radial-gradient(circle at top, #1f2937, #020617 65%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.8rem;
+    }
+
+    .project-body {
+      padding: 0.9rem;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+    }
+
+    .project-tag {
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+    }
+
+    .contact {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(50, 224, 255, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(50, 224, 255, 0.35);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .contact-details {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-details div {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-details strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 1.8rem 0 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-right {
+        justify-self: stretch;
+      }
+      .hero-card {
+        max-width: 100%;
+      }
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <div class="logo-dot"></div>
+        HANGOLEX DESIGN
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Disponible pour nouveaux projets
+          </div>
+          <h1>
+            Miniatures & visuels <span>qui claquent</span> pour créateurs de contenu.
+          </h1>
+          <p class="hero-sub">
+            Je m’appelle Hangolex et je crée des miniatures YouTube, bannières,
+            overlays et visuels pour streamers et organisations esport. L’objectif :
+            rendre ton contenu impossible à ignorer.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">Miniatures YouTube & shorts</div>
+            <div class="hero-badge">Overlays & panels Twitch</div>
+            <div class="hero-badge">Branding pour équipes & tournois</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              Voir mes projets
+              <span>↓</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              Me contacter
+              <span>Discord / mail</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-head">
+              <div class="hero-card-title">Aperçu portfolio</div>
+              <div class="hero-card-pill">Esport & gaming</div>
+            </div>
+            <div class="hero-card-preview">
+              Remplace cette carte par un vrai mockup plus tard.<br>
+              Pour l’instant, elle résume ton style : clair, dynamique, lisible.
+            </div>
+            <div class="hero-card-footer">
+              <div class="hero-card-metric">
+                <span>Projets réalisés</span>
+                <strong>+XX</strong>
+              </div>
+              <div class="hero-card-metric">
+                <span>Clients satisfaits</span>
+                <strong>100%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">SERVICES</div>
+            <div class="section-title">Ce que je peux faire pour toi</div>
+          </div>
+          <p class="section-sub">
+            Tu es créateur de contenu, streamer ou structure esport ? Voici les
+            types de visuels sur lesquels je peux t’aider. Tout est ajustable
+            selon ton style et ton budget.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div>
+              <h3 class="card-title">Miniatures YouTube & shorts</h3>
+              <p class="card-text">
+                Miniatures adaptées au format de ta chaîne, avec un focus sur la
+                lisibilité, le contraste et le taux de clic. Possibilité de pack
+                mensuel si tu postes souvent.
+              </p>
+            </div>
+            <div class="card-tag">Idéal pour chaînes gaming & IRL</div>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3 class="card-title">Overlays & identité Twitch</h3>
+              <p class="card-text">
+                Overlays, panels, bannières, écrans début/fin de live. Le tout
+                cohérent avec ton branding et ton ton de voix.
+              </p>
+            </div>
+            <div class="card-tag">Panels, bannières, transitions</div>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3 class="card-title">Branding pour tournois & équipes</h3>
+              <p class="card-text">
+                Logos, templates d’annonces, visuels de matchs, overlays de cast
+                pour tournois esport & ligues communautaires.
+              </p>
+            </div>
+            <div class="card-tag">Structures & organisateurs de tournois</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">PROJETS</div>
+            <div class="section-title">Quelques travaux récents</div>
+          </div>
+          <p class="section-sub">
+            Voici une sélection de projets sur lesquels j’ai travaillé. Je peux
+            adapter le style à ton univers, que ce soit coloré, minimaliste ou
+            très punchy façon gaming.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-thumb">
+              Importez ici une miniature ou un mockup (projet #1).
+            </div>
+            <div class="project-body">
+              <div class="project-title">Miniatures pour chaîne YouTube</div>
+              <div class="project-meta">Pack de X miniatures pour une chaîne gaming francophone.</div>
+              <div class="project-tags">
+                <span class="project-tag">YouTube</span>
+                <span class="project-tag">Miniatures</span>
+                <span class="project-tag">Gaming</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-thumb">
+              Importez ici un overlay ou une bannière (projet #2).
+            </div>
+            <div class="project-body">
+              <div class="project-title">Overlay & panels Twitch</div>
+              <div class="project-meta">Identité visuelle complète pour un streamer.</div>
+              <div class="project-tags">
+                <span class="project-tag">Twitch</span>
+                <span class="project-tag">Overlay</span>
+                <span class="project-tag">Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-thumb">
+              Importez ici un visuel de tournoi / esport (projet #3).
+            </div>
+            <div class="project-body">
+              <div class="project-title">Visuels pour tournoi esport</div>
+              <div class="project-meta">Annonce de matchs, visuels réseaux sociaux, overlay de cast.</div>
+              <div class="project-tags">
+                <span class="project-tag">Esport</span>
+                <span class="project-tag">Tournoi</span>
+                <span class="project-tag">Social media</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <h2>Travaillons ensemble.</h2>
+          <p>
+            Tu as besoin de miniatures, d’un pack complet pour ta chaîne ou
+            d’un branding pour un événement ? Envoie-moi un message avec ton
+            projet, ton budget et quelques exemples de style, et on voit ça.
+          </p>
+        </div>
+        <div class="contact-details">
+          <div>
+            <strong>Email :</strong>
+            <a href="mailto:ton.email@exemple.com">ton.email@exemple.com</a>
+          </div>
+          <div>
+            <strong>Discord :</strong> tonPseudo#0000
+          </div>
+          <div>
+            <strong>Twitter / X :</strong> @tonhandle
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Hangolex. Tous droits réservés.</div>
+      <div>
+        Site hébergé gratuitement avec GitHub Pages.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
