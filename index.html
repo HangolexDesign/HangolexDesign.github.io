@@ -63,6 +63,22 @@
       align-items: center;
       gap: 0.5rem;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+}
+
+.logo-img {
+  height: 22px; /* Ajuste si tu veux plus grand */
+  width: auto;
+  display: block;
+}
+
 
     .-dot {
       width: 9px;
@@ -486,8 +502,9 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="">
-        </div> HANGOLEX DESIGN
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo Hangolex" class="logo-img">
+        HANGOLEX DESIGN
       </div>
       <nav>
         <a href="#services">Services</a>
@@ -496,6 +513,7 @@
         <a href="#contact">Contact</a>
       </nav>
     </header>
+
 
     <main>
       <section class="hero">
