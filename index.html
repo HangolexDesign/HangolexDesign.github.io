@@ -356,6 +356,34 @@
       background: rgba(15, 23, 42, 0.8);
       border: 1px solid var(--border);
     }
+    
+    .pricing-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-price {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-price span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-left: 0.25rem;
+      font-weight: 400;
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
 
     .contact {
       margin-top: 2.5rem;
@@ -440,6 +468,7 @@
       <nav>
         <a href="#services">Services</a>
         <a href="#projects">Projets</a>
+        <a href="#pricing">Tarifs</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -508,7 +537,86 @@
             <div class="section-title">Ce que je peux faire pour toi</div>
           </div>
         </div>
+      <section id="pricing" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">TARIFS</div>
+            <div class="section-title">Grille de prix</div>
+          </div>
+          <p class="section-sub">
+            Les prix ci-dessous sont des bases indicatives. Ils peuvent varier en fonction de la
+            complexité du projet, du volume demandé et des délais. N’hésite pas à me contacter
+            pour un devis précis.
+          </p>
+        </div>
 
+        <div class="cards">
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Miniature YouTube</div>
+              <div class="pricing-price">Dès 8 CHF <span>par miniature</span></div>
+              <p class="card-text">
+                Miniature optimisée pour YouTube ou Shorts, adaptée à ton style et à ta ligne graphique.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Idéal pour créateurs qui publient régulièrement.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Overlay Twitch</div>
+              <div class="pricing-price">Dès 25 CHF <span>par écran</span></div>
+              <p class="card-text">
+                Overlay de stream (in-game, starting soon, BRB, etc.) pensé pour rester lisible et clean.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Possibilité de pack complet overlay + transitions + panels.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Logo</div>
+              <div class="pricing-price">Dès 40 CHF <span>logo seul</span></div>
+              <p class="card-text">
+                Logo unique pour créateur, équipe ou projet, livré en plusieurs formats d’export.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Idéal si tu as déjà une charte ou des couleurs en tête.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Identité visuelle</div>
+              <div class="pricing-price">Dès 90 CHF <span>pack complet</span></div>
+              <p class="card-text">
+                Logo, palette de couleurs, typographies et exemples d’utilisations pour un univers cohérent.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Pensé pour créateurs ou structures qui veulent un vrai branding.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Affiche & visuels d’événement</div>
+              <div class="pricing-price">Dès 30 CHF <span>par visuel</span></div>
+              <p class="card-text">
+                Affiche de tournoi, visuel d’annonce ou post réseaux sociaux pour mettre ton événement en avant.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Tarif dégressif pour plusieurs variantes ou formats.
+            </div>
+          </article>
+        </div>
+      </section>
         <div class="cards">
           <article class="card">
             <div>
