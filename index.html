@@ -565,7 +565,6 @@
     </header>
 
     <main>
-      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="hero-tag">
@@ -601,8 +600,7 @@
           <img src="images/photo.jpeg" alt="Photo de Hangolex">
         </div>
       </section>
-
-      <!-- SERVICES -->
+      
       <section id="services" class="section">
         <div class="section-header">
           <div>
@@ -656,7 +654,6 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
       <section id="projects" class="section">
         <div class="section-header">
           <div>
@@ -713,7 +710,6 @@
         </div>
       </section>
 
-      <!-- PRICING -->
       <section id="pricing" class="section">
         <div class="section-header">
           <div>
@@ -808,7 +804,6 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact" class="contact-section">
         <div class="contact-left">
           <h2 class="contact-title">Travaillons ensemble.</h2>
@@ -862,10 +857,8 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Année dans le footer
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Gestion du formulaire
       const form = document.querySelector(".contact-form");
       if (!form) return;
 
@@ -903,7 +896,7 @@
       setTimeout(() => {
         popup.classList.remove("visible");
         setTimeout(() => popup.remove(), 300);
-      }, 3000);
+      }, 4000);
     }
   </script>
 </body>
