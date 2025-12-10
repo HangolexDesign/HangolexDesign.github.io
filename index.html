@@ -151,6 +151,22 @@
       gap: 0.8rem;
     }
 
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-photo img {
+      width: 280px;        /* Taille de la photo */
+      height: 280px;       /* Toujours identique pour que ce soit bien rond */
+      object-fit: cover;   /* Coupe proprement l’image */
+      border-radius: 50%;  /* Rend la photo ronde */
+      border: 3px solid var(--accent); /* Petit contour bleu stylé */
+      box-shadow: 0 0 25px rgba(50, 224, 255, 0.35); /* Glow subtil */
+    }
+
+
     .btn {
       align-items: center;
       border: 1px solid transparent;
