@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Hangolex – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta name="description" content="Portfolio de Hangolex – miniatures YouTube, overlays, bannières et visuels pour créateurs de contenu.">
 
   <style>
@@ -536,7 +535,7 @@
       }
     }
 
-    /* Popup de succès (desktop + mobile) */
+    /* Popup succès (tous écrans) */
     .popup-success {
       position: fixed;
       top: 20px;
@@ -551,7 +550,7 @@
       transition: right 0.3s ease;
       z-index: 9999;
     }
-        
+
     .popup-success.visible {
       right: 20px;
     }
@@ -573,11 +572,250 @@
     </header>
 
     <main>
-      <!-- HERO, SERVICES, PROJECTS, PRICING : identique à ton code -->
-      <!-- (je ne re-commente pas chaque bloc, tu peux garder exactement ce que tu avais) -->
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Disponible pour de nouveaux projets
+          </div>
+          <h1>
+            Des visuels <span>pensés pour</span> les créateurs de contenu.
+          </h1>
+          <p class="hero-sub">
+            Je m’appelle Hangolex, je suis graphiste mais aussi streamer sur Twitch. Je crée 
+            des miniatures YouTube, des affiches, des overlays et plein d'autres types de visuels 
+            pour les créateurs de contenu et organisations esport. L’objectif : proposer des visuels 
+            pensés par quelqu'un qui connaît vraiment les besoins des créateurs.
+          </p>
 
-      <!-- ... tout le contenu que tu avais déjà ... -->
+          <div class="hero-badges">
+            <div class="hero-badge">Miniatures YouTube</div>
+            <div class="hero-badge">Identités visuelles</div>
+            <div class="hero-badge">Visuels événementiels</div>
+          </div>
 
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              Mes projets
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              Me contacter
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="images/photo.jpeg" alt="Photo de Hangolex">
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">SERVICES</div>
+            <div class="section-title">Ce que je propose</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div>
+              <h3 class="card-title">Miniatures et visuels YouTube</h3>
+              <p class="card-text">
+                Miniatures YouTube créées pour attirer l’attention et améliorer le taux de clic.
+              </p>
+            </div>
+            <div class="card-tag">Adapté aux créateurs publiant régulièrement</div>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3 class="card-title">Identités visuelles &amp; Branding</h3>
+              <p class="card-text">
+                Identités visuelles conçues pour renforcer l’image de marque et assurer une 
+                esthétique cohérente.
+              </p>
+            </div>
+            <div class="card-tag">Idéal pour se démarquer avec un style unique</div>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3 class="card-title">Visuels pour événements</h3>
+              <p class="card-text">
+                Visuels événementiels réalisés pour dynamiser la communication et valoriser 
+                chaque annonce.
+              </p>
+            </div>
+            <div class="card-tag">Idéal pour organisateurs, équipes, streamers et casters</div>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3 class="card-title">Bannières de profil</h3>
+              <p class="card-text">
+                Bannières adaptées à tous les appareils et pour n'importe quel réseau social.
+              </p>
+            </div>
+            <div class="card-tag">Parfait pour une présence soignée sur toutes les plateformes</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">PROJETS</div>
+            <div class="section-title">Quelques travaux récents</div>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
+              <img src="images/minia.jpeg" alt="Miniature YouTube" style="width:100%; height:auto; display:block;">
+            </div>
+            <div class="project-body">
+              <div class="project-title">Miniature YouTube</div>
+              <div class="project-meta">Miniature pour une chaîne gaming francophone.</div>
+              <div class="project-tags">
+                <span class="project-tag">YouTube</span>
+                <span class="project-tag">Miniature</span>
+                <span class="project-tag">Gaming</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
+              <img src="images/overlay.jpeg" alt="Overlay Twitch" style="width:100%; height:auto; display:block;">
+            </div>
+            <div class="project-body">
+              <div class="project-title">Overlay Twitch</div>
+              <div class="project-meta">Écran de début de stream pour un streamer Twitch.</div>
+              <div class="project-tags">
+                <span class="project-tag">Twitch</span>
+                <span class="project-tag">Overlay</span>
+                <span class="project-tag">Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
+              <img src="images/affiche.jpeg" alt="Affiche tournoi esport" style="width:100%; height:auto; display:block;">
+            </div>
+            <div class="project-body">
+              <div class="project-title">Affiche événementielle</div>
+              <div class="project-meta">Affiche de tournoi esport sur Brawl Stars.</div>
+              <div class="project-tags">
+                <span class="project-tag">Affiche</span>
+                <span class="project-tag">Esport</span>
+                <span class="project-tag">Tournoi</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">TARIFS</div>
+            <div class="section-title">Grille de prix</div>
+          </div>
+          <p class="section-sub">
+            Les prix ci-dessous sont des bases indicatives. Ils peuvent varier en fonction de la
+            complexité du projet, du volume demandé et des délais. N’hésite pas à me contacter
+            pour un devis précis.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Miniature YouTube</div>
+              <div class="pricing-price">Dès 10 CHF <span>la miniature</span></div>
+              <p class="card-text">
+                Miniature optimisée pour YouTube, adaptée à ton style et à ta ligne graphique.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Des packs avantageux de plusieurs miniatures sont possibles en fonction du besoin.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Overlay Twitch</div>
+              <div class="pricing-price">Dès 10 CHF <span>la scène</span></div>
+              <p class="card-text">
+                Overlay de stream (start, facecam, in-game, be right back, end) pensé pour rester lisible et clean.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Possibilité de pack. Par exemple : overlay + transitions + panneaux Twitch.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Logo</div>
+              <div class="pricing-price">Dès 25 CHF<span>le logo</span></div>
+              <p class="card-text">
+                Logo unique et moderne pour créateur, équipe ou projet.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Un logo qui peut se décliner en d'autres visuels par la suite.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Identité visuelle</div>
+              <div class="pricing-price">Dès 50 CHF <span>le pack complet</span></div>
+              <p class="card-text">
+                Logo, palette de couleurs, typographies et exemples d’utilisations pour un univers cohérent.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Il est possible d'ajouter d'autres éléments comme un overlay de stream, une bannière, etc.
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Affiche &amp; visuels d’événement</div>
+              <div class="pricing-price">Dès 15 CHF <span>le visuel</span></div>
+              <p class="card-text">
+                Affiche de tournoi, visuel d’annonce ou post réseaux sociaux pour mettre ton événement en avant.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Tarif dégressif pour des affiches régulières.
+            </div>
+          </article>
+          
+          <article class="card">
+            <div>
+              <div class="pricing-badge">Bannière</div>
+              <div class="pricing-price">Dès 20 CHF <span>la bannière</span></div>
+              <p class="card-text">
+                Bannière YouTube, Twitter (X), Discord ou autre. Adaptée à tous les appareils.
+              </p>
+            </div>
+            <div class="pricing-note">
+              Une bannière peut être compatible avec plusieurs réseaux sociaux.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
       <section id="contact" class="contact-section">
         <div class="contact-left">
           <h2 class="contact-title">Travaillons ensemble.</h2>
