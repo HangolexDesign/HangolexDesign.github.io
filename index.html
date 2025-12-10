@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description" content="Portfolio de Hangolex – miniatures YouTube, overlays, bannières et visuels pour créateurs de contenu.">
+
   <style>
     html {
       scroll-behavior: smooth;
     }
-    
+
     :root {
       --accent: #32e0ff;
       --accent-soft: rgba(50, 224, 255, 0.1);
@@ -49,23 +50,18 @@
       padding-top: 6rem;
     }
 
-
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-    
       display: flex;
       justify-content: space-between;
       align-items: center;
-    
       height: 70px;
       padding: 0 2rem;
-    
       background: rgba(5, 6, 10, 0.8);
       backdrop-filter: blur(12px);
-    
       z-index: 999;
     }
 
@@ -178,7 +174,6 @@
       border: 3px solid var(--accent);
       box-shadow: 0 0 10px var(--accent);
     }
-
 
     .btn {
       align-items: center;
@@ -353,6 +348,8 @@
       margin-top: 0.4rem;
     }
 
+    /* --- CONTACT SECTION --- */
+
     .contact-section {
       margin-top: 3rem;
       padding: 2rem;
@@ -363,24 +360,24 @@
       border: 1px solid rgba(50, 224, 255, 0.2);
       border-radius: 1rem;
     }
-    
+
     .contact-left {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    
+
     .contact-title {
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--text);
     }
-    
+
     .contact-text {
       color: var(--muted);
       max-width: 28rem;
     }
-    
+
     .contact-infos {
       margin-top: 1rem;
       display: flex;
@@ -388,18 +385,18 @@
       gap: 0.3rem;
       color: var(--muted);
     }
-    
+
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    
+
     .form-row {
       display: flex;
       gap: 1rem;
     }
-    
+
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
@@ -411,16 +408,16 @@
       color: var(--text);
       font-size: 0.9rem;
     }
-    
+
     .contact-form select {
       cursor: pointer;
     }
-    
+
     .contact-form textarea {
       min-height: 140px;
       resize: vertical;
     }
-    
+
     .contact-form input:focus,
     .contact-form textarea:focus,
     .contact-form select:focus {
@@ -428,7 +425,7 @@
       border-color: var(--accent);
       box-shadow: 0 0 10px var(--accent-soft);
     }
-    
+
     .btn-contact {
       background: var(--accent);
       border: none;
@@ -439,40 +436,43 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    
+
     .btn-contact:hover {
       background: #4beaff;
       box-shadow: 0 0 12px var(--accent);
     }
-    
+
+    /* --- FOOTER --- */
+
+    footer {
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      gap: 1rem;
+      justify-content: space-between;
+      padding: 1.8rem 0 1rem;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* --- RESPONSIVE --- */
+
     @media (max-width: 850px) {
       .contact-section {
         grid-template-columns: 1fr;
       }
-    
+
       .form-row {
         flex-direction: column;
       }
     }
-    
-    
-        footer {
-          color: var(--muted);
-          display: flex;
-          flex-wrap: wrap;
-          font-size: 0.75rem;
-          gap: 1rem;
-          justify-content: space-between;
-          padding: 1.8rem 0 1rem;
-        }
-    
-        footer a {
-          color: var(--muted);
-        }
-    
-        footer a:hover {
-          color: var(--accent);
-        }
 
     @media (max-width: 800px) {
       .wrapper {
@@ -491,7 +491,7 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1rem 0 2rem;
-       }
+      }
 
       .hero h1 {
         font-size: clamp(1.8rem, 6vw, 2.3rem);
@@ -528,15 +528,6 @@
 
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-
-      .contact {
-        grid-template-columns: 1fr;
-        padding: 1.25rem;
-      }
-
-      .contact p {
-        max-width: 100%;
       }
 
       footer {
@@ -598,7 +589,6 @@
         </div>
       </section>
 
-
       <section id="services" class="section">
         <div class="section-header">
           <div>
@@ -639,7 +629,7 @@
             </div>
             <div class="card-tag">Idéal pour organisateurs, équipes, streamers et casters</div>
           </article>
-          <div class="cards">
+
           <article class="card">
             <div>
               <h3 class="card-title">Bannières de profil</h3>
@@ -770,7 +760,7 @@
               </p>
             </div>
             <div class="pricing-note">
-              Il est possibles d'ajouter d'autres éléments comme un overlay de stream, une bannière, etc.
+              Il est possible d'ajouter d'autres éléments comme un overlay de stream, une bannière, etc.
             </div>
           </article>
 
@@ -792,7 +782,7 @@
               <div class="pricing-badge">Bannière</div>
               <div class="pricing-price">Dès 20 CHF <span>la bannière</span></div>
               <p class="card-text">
-                Bannière YouTube, Twitter (X), Discord ou autre. Adaptée à tous les appareils
+                Bannière YouTube, Twitter (X), Discord ou autre. Adaptée à tous les appareils.
               </p>
             </div>
             <div class="pricing-note">
@@ -802,38 +792,36 @@
         </div>
       </section>
 
-
       <section id="contact" class="contact-section">
         <div class="contact-left">
           <h2 class="contact-title">Travaillons ensemble.</h2>
           <p class="contact-text">
             Tu as besoin d'un des services que je propose ou tu as une demande plus spécifique ?
-            Envoie-moi un message (email, instagram ou discord) avec ton projet , ton budget et 
+            Envoie-moi un message (email, Instagram ou Discord) avec ton projet, ton budget et 
             quelques exemples de style, pour qu'on regarde ça ensemble !
           </p>
-      
+
           <div class="contact-infos">
             <div><strong>Email :</strong> design@hangolex.com</div>
             <div><strong>Discord :</strong> hangolex</div>
             <div><strong>Instagram :</strong> @hangolextv</div>
           </div>
         </div>
-      
+
         <form action="https://formsubmit.co/design@hangolex.com" method="POST" class="contact-form">
-      
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="Nouveau message depuis Hangolex.com">
           <input type="hidden" name="_template" value="table">
-      
+
           <div class="form-row">
             <input type="text" name="firstname" placeholder="Prénom" required>
             <input type="text" name="lastname" placeholder="Nom" required>
           </div>
-      
+
           <input type="email" name="email" placeholder="Email" required>
-      
+
           <select name="topic" required>
-            <option value="" disabled selected>Sujet de votre demande</option>
+            <option value="" disabled selected>Sujet de ta demande</option>
             <option value="Miniature YouTube">Miniature YouTube</option>
             <option value="Overlay Twitch">Overlay Twitch</option>
             <option value="Logo">Logo</option>
@@ -841,12 +829,13 @@
             <option value="Affiche d’événement">Affiche d’événement</option>
             <option value="Autre">Autre demande</option>
           </select>
-      
+
           <textarea name="message" placeholder="Décris ton projet..." required></textarea>
-      
+
           <button type="submit" class="btn-contact">Envoyer</button>
         </form>
       </section>
+    </main>
 
     <footer>
       <div>© <span id="year"></span> Hangolex. Tous droits réservés.</div>
