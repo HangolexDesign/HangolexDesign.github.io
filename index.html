@@ -812,16 +812,18 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="Nouveau message depuis Hangolex.com">
           <input type="hidden" name="_template" value="table">
-
+      
+          <input type="hidden" name="_redirect" value="https://hangolex.com/#contact">
+      
           <div class="form-row">
             <input type="text" name="firstname" placeholder="Prénom" required>
             <input type="text" name="lastname" placeholder="Nom" required>
           </div>
-
+      
           <input type="email" name="email" placeholder="Email" required>
-
+      
           <select name="topic" required>
-            <option value="" disabled selected>Sujet de ta demande</option>
+            <option value="" disabled selected>Sujet de votre demande</option>
             <option value="Miniature YouTube">Miniature YouTube</option>
             <option value="Overlay Twitch">Overlay Twitch</option>
             <option value="Logo">Logo</option>
@@ -829,6 +831,12 @@
             <option value="Affiche d’événement">Affiche d’événement</option>
             <option value="Autre">Autre demande</option>
           </select>
+
+    <textarea name="message" placeholder="Décris ton projet..." required></textarea>
+
+    <button type="submit" class="btn-contact">Envoyer</button>
+</form>
+
 
           <textarea name="message" placeholder="Décris ton projet..." required></textarea>
 
