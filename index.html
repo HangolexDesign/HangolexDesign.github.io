@@ -51,19 +51,21 @@
 
 
     header {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
     
-      background: rgba(50, 224, 255, 0.75);
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Centre VERTICALEMENT */
+    
+      height: 70px; /* Hauteur uniforme du header */
+      padding: 0 2rem; /* Plus de padding vertical, juste horizontal */
+    
+      background: rgba(5, 6, 10, 0.8);
       backdrop-filter: blur(12px);
     
-      padding: 0.25rem 2rem 1.5rem;
       z-index: 999;
     }
 
