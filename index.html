@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="icon" type="image/png" href="/images/logo.png">
   <meta charset="UTF-8">
-  <title>Hangolex – Portfolio</title>
+  <title>Hangolex – Créateur de contenu & graphiste</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio de Hangolex – miniatures YouTube, overlays, bannières et visuels pour créateurs de contenu.">
+  <meta name="description" content="Hangolex, créateur de contenu et graphiste : miniatures YouTube, overlays, affiches esport et streaming sur Twitch.">
+  
+  <!-- Favicon : mets ton favicon.png à la racine du site -->
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
     html {
@@ -42,16 +44,6 @@
       text-decoration: none;
     }
 
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      font-family: inherit;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      font-family: inherit;
-    }
-
     .wrapper {
       width: 100%;
       max-width: 1320px;
@@ -59,6 +51,8 @@
       padding: 2rem 2.5rem;
       padding-top: 6rem;
     }
+
+    /* HEADER */
 
     header {
       position: fixed;
@@ -83,6 +77,7 @@
       gap: 0.5rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      cursor: pointer;
     }
 
     .logo-img {
@@ -102,12 +97,14 @@
       color: var(--accent);
     }
 
+    /* HERO */
+
     .hero {
       align-items: center;
       display: grid;
       gap: 2rem;
       grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
-      padding: 1.5rem 0 2.5rem;
+      padding: 1.5rem 0 3rem;
     }
 
     .hero-tag {
@@ -132,9 +129,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
       margin-bottom: 0.8rem;
-      max-width: 2000px;
+      max-width: 32rem;
     }
 
     .hero h1 span {
@@ -145,7 +142,7 @@
       color: var(--muted);
       font-size: 0.98rem;
       margin-bottom: 1.4rem;
-      max-width: 34rem;
+      max-width: 36rem;
     }
 
     .hero-badges {
@@ -176,14 +173,27 @@
       align-items: center;
     }
 
+    .hero-photo-inner {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      padding: 4px;
+      background: radial-gradient(circle at top, var(--accent), #0b1120);
+      box-shadow: 0 0 20px rgba(50, 224, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .hero-photo img {
-      width: 280px;
-      height: 280px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 10px var(--accent);
+      border: 3px solid #020617;
     }
+
+    /* BUTTONS */
 
     .btn {
       align-items: center;
@@ -203,16 +213,18 @@
       font-weight: 600;
     }
 
-    .btn-outline {
+    .btn-secondary {
       background: transparent;
       border-color: var(--border);
       color: var(--text);
     }
 
-    .btn-outline span {
+    .btn-secondary span {
       color: var(--muted);
       font-size: 0.78rem;
     }
+
+    /* SECTIONS GÉNÉRIQUES */
 
     .section {
       padding: 2.5rem 0 0;
@@ -235,7 +247,7 @@
     }
 
     .section-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
     }
 
@@ -244,6 +256,8 @@
       font-size: 0.9rem;
       max-width: 32rem;
     }
+
+    /* CARDS */
 
     .cards {
       display: grid;
@@ -279,176 +293,66 @@
       font-size: 0.75rem;
     }
 
-    .projects-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-    }
+    /* SECTION STREAM */
 
-    .project {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .project-thumb {
-      background: radial-gradient(circle at top, #1f2937, #020617 65%);
-      border-radius: 0.8rem;
-      overflow: hidden;
-      padding: 0.35rem;
-    }
-
-    .project-body {
-      padding: 0.9rem;
-    }
-
-    .project-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .project-meta {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 0.75rem;
-      gap: 0.3rem;
-    }
-
-    .project-tag {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.1rem 0.5rem;
-    }
-
-    .pricing-badge {
-      color: var(--muted);
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-    }
-
-    .pricing-price {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .pricing-price span {
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 400;
-      margin-left: 0.25rem;
-    }
-
-    .pricing-note {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 0.4rem;
-    }
-
-    .contact-section {
+    .stream-section {
       margin-top: 3rem;
       padding: 2rem;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2.5rem;
-      background: rgba(15, 23, 42, 0.4);
-      border: 1px solid rgba(50, 224, 255, 0.2);
       border-radius: 1rem;
+      background: radial-gradient(circle at top left, rgba(50,224,255,0.14), #020617);
+      border: 1px solid rgba(50, 224, 255, 0.25);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 2rem;
     }
 
-    .contact-left {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .contact-text {
-      color: var(--muted);
-      max-width: 28rem;
-    }
-
-    .contact-infos {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      color: var(--muted);
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.7);
+    .stream-highlight {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 0.9rem;
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 0.8rem 1rem;
-      color: var(--text);
+      padding: 1rem;
       font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .contact-form select {
-      cursor: pointer;
+    /* SECTION CONTACT TEASER */
+
+    .contact-teaser {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(50, 224, 255, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
     }
 
-    .contact-form textarea {
-      min-height: 140px;
-      resize: vertical;
+    .contact-teaser p {
+      color: var(--muted);
+      max-width: 32rem;
+      font-size: 0.95rem;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent-soft);
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .btn-contact {
-      background: var(--accent);
-      border: none;
-      color: #020617;
-      padding: 0.9rem;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
+    .contact-links a {
+      color: var(--accent);
     }
 
-    .btn-contact:hover {
-      background: #4beaff;
-      box-shadow: 0 0 12px var(--accent);
+    .contact-links a:hover {
+      text-decoration: underline;
     }
+
+    /* FOOTER */
 
     footer {
       color: var(--muted);
@@ -468,13 +372,21 @@
       color: var(--accent);
     }
 
-    @media (max-width: 850px) {
-      .contact-section {
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0 2rem;
       }
 
-      .form-row {
-        flex-direction: column;
+      .hero-photo {
+        order: -1;
+      }
+
+      .stream-section {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -484,41 +396,11 @@
       }
 
       header {
-        padding-bottom: 1rem;
+        padding: 0 1.25rem;
       }
 
       nav {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem 0 2rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(1.8rem, 6vw, 2.3rem);
-        max-width: 100%;
-      }
-
-      .hero-sub {
-        font-size: 0.9rem;
-        max-width: 100%;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        justify-content: center;
-        width: 100%;
-      }
-
-      .section {
-        padding: 2rem 0 0;
+        display: none; /* tu pourras plus tard faire un menu burger */
       }
 
       .section-header {
@@ -530,342 +412,175 @@
         grid-template-columns: 1fr;
       }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
       footer {
         flex-direction: column;
         align-items: flex-start;
       }
     }
-
-    .popup-success {
-      position: fixed;
-      top: 20px;
-      right: -300px;
-      background: #32e0ff;
-      color: #020617;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 0 15px rgba(50, 224, 255, 0.4);
-      transition: right 0.3s ease;
-      z-index: 9999;
-    }
-
-    .popup-success.visible {
-      right: 20px;
-    }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="#top" class="logo">
-        <img src="images/logo.png" alt="Logo Hangolex" class="logo-img">
-        HANGOLEX DESIGN
-      </a>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#projects">Projets</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <header>
+    <!-- Logo cliquable qui remonte en haut de la page -->
+    <div class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <img src="images/logo.png" alt="Logo Hangolex" class="logo-img">
+      HANGOLEX DESIGN
+    </div>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="#stream">Stream</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <main>
+  <div class="wrapper">
+    <!-- HERO / ABOUT -->
+    <main id="about">
       <section class="hero">
         <div>
           <div class="hero-tag">
             <span class="hero-tag-dot"></span>
-            Disponible pour de nouveaux projets
+            Créateur de contenu & graphiste
           </div>
           <h1>
             Des visuels <span>pensés pour</span> les créateurs de contenu.
           </h1>
           <p class="hero-sub">
-            Je m’appelle Hangolex, je suis graphiste mais aussi streamer sur Twitch. Je crée 
-            des miniatures YouTube, des affiches, des overlays et plein d'autres types de visuels 
-            pour les créateurs de contenu et organisations esport. L’objectif : proposer des visuels 
-            pensés par quelqu'un qui connaît vraiment les besoins des créateurs.
+            Je m’appelle Hangolex, je suis graphiste mais aussi streamer sur Twitch. 
+            Je crée des miniatures YouTube, des affiches, des overlays et des visuels 
+            pour les créateurs de contenu et les organisations esport. 
+            Mon objectif : proposer des visuels efficaces, créés par quelqu’un qui 
+            connaît vraiment la réalité des créateurs.
           </p>
 
           <div class="hero-badges">
             <div class="hero-badge">Miniatures YouTube</div>
-            <div class="hero-badge">Identités visuelles</div>
-            <div class="hero-badge">Visuels événementiels</div>
+            <div class="hero-badge">Overlays & scènes Twitch</div>
+            <div class="hero-badge">Affiches & visuels esport</div>
           </div>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              Mes projets
+            <a href="portfolio.html" class="btn btn-primary">
+              Voir le portfolio
             </a>
-            <a href="#contact" class="btn btn-outline">
+            <a href="#contact" class="btn btn-secondary">
               Me contacter
+            </a>
+            <a href="https://twitch.tv/HangolexTV" target="_blank" class="btn btn-secondary">
+              Voir mon stream
             </a>
           </div>
         </div>
+
         <div class="hero-photo">
-          <img src="images/photo.jpeg" alt="Photo de Hangolex">
+          <div class="hero-photo-inner">
+            <!-- même photo que sur ton portfolio -->
+            <img src="images/photo.jpeg" alt="Photo de Hangolex">
+          </div>
         </div>
       </section>
-      
-      <section id="services" class="section">
+
+      <!-- CE QUE JE FAIS (RÉSUMÉ) -->
+      <section class="section">
         <div class="section-header">
           <div>
             <div class="section-kicker">SERVICES</div>
-            <div class="section-title">Ce que je propose</div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div>
-              <h3 class="card-title">Miniatures et visuels YouTube</h3>
-              <p class="card-text">
-                Miniatures YouTube créées pour attirer l’attention et améliorer le taux de clic.
-              </p>
-            </div>
-            <div class="card-tag">Adapté aux créateurs publiant régulièrement</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Identités visuelles &amp; Branding</h3>
-              <p class="card-text">
-                Identités visuelles conçues pour renforcer l’image de marque et assurer une 
-                esthétique cohérente.
-              </p>
-            </div>
-            <div class="card-tag">Idéal pour se démarquer avec un style unique</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Visuels pour événements</h3>
-              <p class="card-text">
-                Visuels événementiels réalisés pour dynamiser la communication et valoriser 
-                chaque annonce.
-              </p>
-            </div>
-            <div class="card-tag">Idéal pour organisateurs, équipes, streamers et casters</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Bannières de profil</h3>
-              <p class="card-text">
-                Bannières adaptées à tous les appareils et pour n'importe quel réseau social.
-              </p>
-            </div>
-            <div class="card-tag">Parfait pour une présence soignée sur toutes les plateformes</div>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">PROJETS</div>
-            <div class="section-title">Quelques travaux récents</div>
-          </div>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/minia.jpeg" alt="Miniature YouTube" style="width:100%; height:auto; display:block;">
-            </div>
-            <div class="project-body">
-              <div class="project-title">Miniature YouTube</div>
-              <div class="project-meta">Miniature pour une chaîne gaming francophone.</div>
-              <div class="project-tags">
-                <span class="project-tag">YouTube</span>
-                <span class="project-tag">Miniature</span>
-                <span class="project-tag">Gaming</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/overlay.jpeg" alt="Overlay Twitch" style="width:100%; height:auto; display:block;">
-            </div>
-            <div class="project-body">
-              <div class="project-title">Overlay Twitch</div>
-              <div class="project-meta">Écran de début de stream pour un streamer Twitch.</div>
-              <div class="project-tags">
-                <span class="project-tag">Twitch</span>
-                <span class="project-tag">Overlay</span>
-                <span class="project-tag">Branding</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/affiche.jpeg" alt="Affiche tournoi esport" style="width:100%; height:auto; display:block;">
-            </div>
-            <div class="project-body">
-              <div class="project-title">Affiche événementielle</div>
-              <div class="project-meta">Affiche de tournoi esport sur Brawl Stars.</div>
-              <div class="project-tags">
-                <span class="project-tag">Affiche</span>
-                <span class="project-tag">Esport</span>
-                <span class="project-tag">Tournoi</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="pricing" class="section">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">TARIFS</div>
-            <div class="section-title">Grille de prix</div>
+            <div class="section-title">Ce que je fais au quotidien</div>
           </div>
           <p class="section-sub">
-            
+            Graphisme, streaming, cast de tournois et projets esport : voici les domaines 
+            sur lesquels je peux t’accompagner.
           </p>
         </div>
 
         <div class="cards">
           <article class="card">
             <div>
-              <div class="pricing-badge">Miniature YouTube</div>
-              <div class="pricing-price">Dès 10 CHF <span>la miniature</span></div>
+              <h3 class="card-title">Graphisme pour créateurs</h3>
               <p class="card-text">
-                Miniature optimisée pour YouTube, adaptée à ton style et à ta ligne graphique.
+                Miniatures YouTube, overlays Twitch, bannières, affiches de tournois et visuels 
+                réseaux sociaux adaptés à ton style.
               </p>
             </div>
-            <div class="pricing-note">
-              Des packs avantageux de plusieurs miniatures sont possibles en fonction du besoin.
-            </div>
+            <div class="card-tag">Découvre des exemples dans le portfolio</div>
           </article>
 
           <article class="card">
             <div>
-              <div class="pricing-badge">Overlay Twitch</div>
-              <div class="pricing-price">Dès 10 CHF <span>la scène</span></div>
+              <h3 class="card-title">Streaming & Twitch</h3>
               <p class="card-text">
-                Overlay de stream (start, facecam, in-game, be right back, end) pensé pour rester lisible et clean.
+                Streams réguliers sur Brawl Stars et d’autres jeux, avec une attention particulière 
+                à la qualité visuelle et à l’animation du chat.
               </p>
             </div>
-            <div class="pricing-note">
-              Possibilité de pack. Par exemple : overlay + transitions + panneaux Twitch.
-            </div>
+            <div class="card-tag">Live sur twitch.tv/HangolexTV</div>
           </article>
 
           <article class="card">
             <div>
-              <div class="pricing-badge">Logo</div>
-              <div class="pricing-price">Dès 25 CHF<span>le logo</span></div>
+              <h3 class="card-title">Esport & événements</h3>
               <p class="card-text">
-                Logo unique et moderne pour créateur, équipe ou projet.
+                Organisation et cast de tournois, visuels d’annonce, overlays d’event et 
+                communication autour des compétitions.
               </p>
             </div>
-            <div class="pricing-note">
-              Un logo qui peut se décliner en d'autres visuels par la suite.
-            </div>
-          </article>
-
-          <article class="card">
-            <div>
-              <div class="pricing-badge">Identité visuelle</div>
-              <div class="pricing-price">Dès 50 CHF <span>le pack complet</span></div>
-              <p class="card-text">
-                Logo, palette de couleurs, typographies et exemples d’utilisations pour un univers cohérent.
-              </p>
-            </div>
-            <div class="pricing-note">
-              Il est possible d'ajouter d'autres éléments comme un overlay de stream, une bannière, etc.
-            </div>
-          </article>
-
-          <article class="card">
-            <div>
-              <div class="pricing-badge">Affiche &amp; visuels d’événement</div>
-              <div class="pricing-price">Dès 15 CHF <span>le visuel</span></div>
-              <p class="card-text">
-                Affiche de tournoi, visuel d’annonce ou post réseaux sociaux pour mettre ton événement en avant.
-              </p>
-            </div>
-            <div class="pricing-note">
-              Tarif dégressif pour des affiches régulières.
-            </div>
-          </article>
-          
-          <article class="card">
-            <div>
-              <div class="pricing-badge">Bannière</div>
-              <div class="pricing-price">Dès 20 CHF <span>la bannière</span></div>
-              <p class="card-text">
-                Bannière YouTube, Twitter (X), Discord ou autre. Adaptée à tous les appareils.
-              </p>
-            </div>
-            <div class="pricing-note">
-              Une bannière peut être compatible avec plusieurs réseaux sociaux.
-            </div>
+            <div class="card-tag">Idéal pour équipes et structures esport</div>
           </article>
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
-        <div class="contact-left">
-          <h2 class="contact-title">Travaillons ensemble.</h2>
-          <p class="contact-text">
-            Tu as besoin d'un des services que je propose ou tu as une demande plus spécifique ?
-            Remplis le formulaire ou envoie-moi un message (email, Instagram ou Discord) avec ton projet, ton budget et 
-            quelques exemples, pour qu'on regarde ça ensemble !
+      <!-- SECTION STREAM -->
+      <section id="stream" class="stream-section">
+        <div>
+          <div class="section-kicker">STREAM</div>
+          <div class="section-title">Twitch & contenu en direct</div>
+          <p class="section-sub">
+            Sur Twitch, je mêle gameplay, cast, projets communautaires et tests de visuels en direct. 
+            C’est aussi l’endroit parfait pour discuter de tes besoins en graphisme ou de ton projet.
           </p>
 
-         <div class="contact-infos">
-          <div>
-            <strong>Email :</strong>
-            <a href="mailto:contact@hangolex.com">contact@hangolex.com</a>
-          </div>
-          <div>
-            <strong>Discord :</strong>
-            <a href="https://discord.gg/ERMVHa9MzS" target="_blank" rel="noopener noreferrer">hangolex</a>
-          </div>
-          <div>
-            <strong>Instagram :</strong>
-            <a href="https://instagram.com/hangolextv" target="_blank" rel="noopener noreferrer">@hangolextv</a>
+          <div style="margin-top: 1.4rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+            <a href="https://twitch.tv/HangolexTV" target="_blank" class="btn btn-primary">
+              Aller sur ma chaîne Twitch
+            </a>
+            <a href="portfolio.html" class="btn btn-secondary">
+              Voir les visuels utilisés en stream
+            </a>
           </div>
         </div>
+
+        <div class="stream-highlight">
+          <strong>Ce que tu peux trouver en live :</strong><br><br>
+          • Gameplay Brawl Stars & autres jeux<br>
+          • Cast et analyse de tournois<br>
+          • Création et tests de visuels en direct<br>
+          • Discussions avec la commu autour du streaming et de la création de contenu
+        </div>
+      </section>
+
+      <!-- CONTACT TEASER -->
+      <section id="contact" class="contact-teaser">
+        <div>
+          <h2 class="section-title">Travaillons ensemble.</h2>
+          <p>
+            Tu as un projet de miniature, d’overlay, d’affiche ou d’identité visuelle ?  
+            Tu peux m’écrire directement ou passer par le formulaire sur la page portfolio.
+          </p>
         </div>
 
-        <form action="https://formsubmit.co/contact@hangolex.com" method="POST" class="contact-form">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="de Hangolex">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_redirect" value="https://hangolex.com/#contact">
-
-          <div class="form-row">
-            <input type="text" name="firstname" placeholder="Prénom" required>
-            <input type="text" name="lastname" placeholder="Nom" required>
+        <div>
+          <div style="margin-bottom: 0.9rem;">
+            <a href="portfolio.html#contact" class="btn btn-primary">
+              Ouvrir le formulaire de contact
+            </a>
           </div>
-
-          <input type="email" name="email" placeholder="Email" required>
-
-          <select name="topic" required>
-            <option value="" disabled selected>Sujet de votre demande</option>
-            <option value="Miniature YouTube">Miniature YouTube</option>
-            <option value="Overlay Twitch">Overlay Twitch</option>
-            <option value="Logo">Logo</option>
-            <option value="Identité visuelle">Identité visuelle</option>
-            <option value="Affiche d’événement">Affiche d’événement</option>
-            <option value="Bannière">Bannière</option>
-            <option value="Autre">Autre demande</option>
-          </select>
-
-          <textarea name="message" placeholder="Décris ton projet..." required></textarea>
-
-          <button type="submit" class="btn-contact">Envoyer</button>
-        </form>
+          <div class="contact-links">
+            <div><strong>Email :</strong> <a href="mailto:contact@hangolex.com">contact@hangolex.com</a></div>
+            <div><strong>Discord :</strong> <span>hangolex</span></div>
+            <div><strong>Instagram :</strong> <a href="https://instagram.com/hangolextv" target="_blank">@hangolextv</a></div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -875,48 +590,7 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      const form = document.querySelector(".contact-form");
-      if (!form) return;
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
-          form.reset();
-          showPopup();
-        } else {
-          alert("Une erreur est survenue. Essaie encore !");
-        }
-      });
-    });
-
-    function showPopup() {
-      const popup = document.createElement("div");
-      popup.className = "popup-success";
-      popup.innerText = "Message envoyé avec succès !";
-
-      document.body.appendChild(popup);
-
-      setTimeout(() => {
-        popup.classList.add("visible");
-      }, 50);
-
-      setTimeout(() => {
-        popup.classList.remove("visible");
-        setTimeout(() => popup.remove(), 300);
-      }, 4000);
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
