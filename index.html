@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="icon" type="image/png" href="/images/logo.png">
   <meta charset="UTF-8">
   <title>Hangolex – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio de Hangolex – miniatures YouTube, overlays, bannières et visuels pour créateurs de contenu.">
+  <link rel="icon" type="image/png" href="/images/logo.png">
 
   <style>
     html {
@@ -40,16 +40,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      font-family: inherit;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      font-family: inherit;
     }
 
     .wrapper {
@@ -415,6 +405,12 @@
       padding: 0.8rem 1rem;
       color: var(--text);
       font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      font-family: inherit;
     }
 
     .contact-form select {
@@ -563,10 +559,12 @@
 <body>
   <div class="wrapper">
     <header>
-      <a href="#top" class="logo">
+      <!-- Logo : scroll vers le haut sans #top -->
+      <a href="/" class="logo" id="logo-link">
         <img src="images/logo.png" alt="Logo Hangolex" class="logo-img">
         HANGOLEX DESIGN
       </a>
+
       <nav>
         <a href="#services">Services</a>
         <a href="#projects">Projets</a>
@@ -728,7 +726,9 @@
             <div class="section-title">Grille de prix</div>
           </div>
           <p class="section-sub">
-            
+            Les prix ci-dessous sont des bases indicatives. Ils peuvent varier en fonction de la
+            complexité du projet, du volume demandé et des délais. N’hésite pas à me contacter
+            pour un devis précis.
           </p>
         </div>
 
@@ -822,26 +822,27 @@
             quelques exemples, pour qu'on regarde ça ensemble !
           </p>
 
-         <div class="contact-infos">
-          <div>
-            <strong>Email :</strong>
-            <a href="mailto:contact@hangolex.com">contact@hangolex.com</a>
+          <div class="contact-infos">
+            <div>
+              <strong>Email :</strong>
+              <a href="mailto:contact@hangolex.com">contact@hangolex.com</a>
+            </div>
+            <div>
+              <strong>Discord :</strong>
+              <a href="https://discord.gg/ERMVHa9MzS" target="_blank" rel="noopener noreferrer">hangolex</a>
+            </div>
+            <div>
+              <strong>Instagram :</strong>
+              <a href="https://instagram.com/hangolextv" target="_blank" rel="noopener noreferrer">@hangolextv</a>
+            </div>
           </div>
-          <div>
-            <strong>Discord :</strong>
-            <a href="https://discord.gg/ERMVHa9MzS" target="_blank" rel="noopener noreferrer">hangolex</a>
-          </div>
-          <div>
-            <strong>Instagram :</strong>
-            <a href="https://instagram.com/hangolextv" target="_blank" rel="noopener noreferrer">@hangolextv</a>
-          </div>
-        </div>
         </div>
 
         <form action="https://formsubmit.co/contact@hangolex.com" method="POST" class="contact-form">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="de Hangolex">
+          <input type="hidden" name="_subject" value="Nouveau message depuis Hangolex.com">
           <input type="hidden" name="_template" value="table">
+          <!-- Fallback si JS ne marche pas -->
           <input type="hidden" name="_redirect" value="https://hangolex.com/#contact">
 
           <div class="form-row">
@@ -876,8 +877,29 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("year").textContent = new Date().getFullYear();
+      // année dans le footer
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
 
+      // Scroll en haut quand on clique sur le logo, sans #top dans l'URL
+      const logoLink = document.getElementById("logo-link");
+      if (logoLink) {
+        logoLink.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+          // Nettoie l'URL : https://hangolex.com (sans hash)
+          history.pushState("", document.title, "/");
+        });
+      }
+
+      // Gestion du formulaire avec fetch (sans redirection FormSubmit)
       const form = document.querySelector(".contact-form");
       if (!form) return;
 
