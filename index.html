@@ -80,12 +80,14 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body{
+
+    /* ✅ Fond sur html (iOS overscroll) */
+    html{
       background: radial-gradient(circle at top, #111827 0, #020308 55%, #000 100%);
     }
 
     body {
-      background: transparent;
+      background: transparent; /* important: le fond est sur html */
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
       line-height: 1.6;
@@ -93,11 +95,18 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* ✅ Lock scroll iOS quand menu ouvert */
     body.menu-open{
       overflow: hidden;
       position: fixed;
       width: 100%;
     }
+
+    /* ✅ Empêche le clic “à travers” l’overlay (optionnel mais clean) */
+    body.menu-open main{ pointer-events: none; }
+    body.menu-open header,
+    body.menu-open nav,
+    body.menu-open .nav-toggle{ pointer-events: auto; }
 
     .wrapper {
       width: 100%;
@@ -112,7 +121,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 999;
+      z-index: 1000;          /* ✅ au-dessus overlay */
       background: transparent;
       backdrop-filter: none;
     }
@@ -132,6 +141,9 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 14px;
+
+      position: relative;     /* ✅ crée un contexte de z-index */
+      z-index: 1001;          /* ✅ au-dessus overlay */
     }
 
     .logo {
@@ -460,8 +472,15 @@
       cursor: pointer;
     }
 
-    /* Overlay mobile */
-    .menu-overlay { display: none; }
+    /* ✅ Overlay mobile (plus sombre, plus “premium”) */
+    .menu-overlay{
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 998; /* sous le header */
+    }
+    .menu-overlay.open{ display: block; }
 
     @media (max-width: 850px) {
       .contact-section { grid-template-columns: 1fr; }
@@ -472,14 +491,13 @@
     @media (max-width: 800px) {
       .wrapper{
         padding: 1.25rem;
-        padding-top: 6.7rem; /* laisse la place au header fixed */
+        padding-top: 6.7rem;
       }
 
       .header-inner{
         width: calc(100% - 2.5rem);
         margin: 0.85rem auto 0;
         padding: 0 1rem;
-        position: relative;
         height: 64px;
       }
 
@@ -491,22 +509,11 @@
 
       .logo-img{ height: 40px; }
 
-      /* bouton burger */
       .nav-toggle{
         display: inline-flex;
         align-items: center;
         justify-content: center;
       }
-
-      /* overlay */
-      .menu-overlay{
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.35);
-        z-index: 998; /* juste sous le header (999) */
-      }
-      .menu-overlay.open{ display: block; }
 
       /* menu caché */
       nav{
@@ -543,7 +550,7 @@
         color: var(--text);
       }
 
-      /* ✅ HERO: 1 colonne + photo dessous */
+      /* HERO: 1 colonne + photo dessous */
       .hero{
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -578,12 +585,12 @@
         height: min(260px, 78vw);
       }
 
-      /* ✅ SERVICES/TARIFS: 1 colonne */
+      /* SERVICES/TARIFS: 1 colonne */
       .cards{
         grid-template-columns: 1fr;
       }
 
-      /* ✅ PROJETS: 1 colonne (un en dessous de l'autre) */
+      /* PROJETS: 1 colonne */
       .projects-grid{
         grid-template-columns: 1fr;
       }
@@ -970,7 +977,7 @@
         });
       }
 
-      // Menu burger (mobile) + overlay + fermeture click outside / Escape / scroll
+      // Menu burger (mobile) + overlay + fermeture click outside / Escape / scroll + lock iOS
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.getElementById("main-nav");
       const overlay = document.querySelector(".menu-overlay");
@@ -979,29 +986,29 @@
 
       function closeMenu() {
         if (!toggle || !nav) return;
-      
+
         nav.classList.remove("open");
         if (overlay) overlay.classList.remove("open");
-      
+
         toggle.setAttribute("aria-expanded", "false");
         toggle.textContent = "☰";
-      
+
         // Débloque le scroll iOS
         document.body.classList.remove("menu-open");
         document.body.style.top = "";
         window.scrollTo(0, scrollY);
       }
-      
+
       function openMenu() {
         if (!toggle || !nav) return;
-      
+
         nav.classList.add("open");
         if (overlay) overlay.classList.add("open");
-      
+
         toggle.setAttribute("aria-expanded", "true");
         toggle.textContent = "✕";
-      
-        // Bloque le scroll iOS (évite le “bandeau” clair)
+
+        // Bloque le scroll iOS (évite les effets visuels “gris/blanc”)
         scrollY = window.scrollY || 0;
         document.body.classList.add("menu-open");
         document.body.style.top = `-${scrollY}px`;
@@ -1021,9 +1028,7 @@
           a.addEventListener("click", () => closeMenu());
         });
 
-        if (overlay) {
-          overlay.addEventListener("click", () => closeMenu());
-        }
+        if (overlay) overlay.addEventListener("click", () => closeMenu());
 
         document.addEventListener("click", () => closeMenu());
 
