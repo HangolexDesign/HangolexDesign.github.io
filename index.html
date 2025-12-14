@@ -548,16 +548,46 @@
     @media (max-width: 800px) {
       .wrapper {
         padding: 1.25rem;
+        padding-top: 9.5rem;
       }
 
       header {
         padding-bottom: 1rem;
       }
 
-      nav {
-        display: none;
+      /* Header en 2 lignes : logo puis nav */
+      .header-inner{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        height: auto;
+        padding: 0.75rem 1rem;
       }
-
+      
+      /* Logo sur 1 ligne + un peu plus petit */
+      .logo{
+        font-size: 1.05rem;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+      
+      /* Nav visible, en 2 colonnes */
+      nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem 0.8rem;
+        width: 100%;
+        justify-items: center;
+        font-size: 0.9rem;
+      }
+      nav a{
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+      }
+      nav a:hover{
+        background: rgba(255,255,255,0.06);
+      }
+      
       .hero {
         grid-template-columns: 1fr;
         gap: 1.5rem;
