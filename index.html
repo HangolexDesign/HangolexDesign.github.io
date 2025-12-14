@@ -299,6 +299,24 @@
       cursor: pointer;
     }
 
+    /* Overlay mobile */
+    .menu-overlay{
+      display:none;
+    }
+    
+    @media (max-width: 800px){
+      .menu-overlay{
+        display:none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 998; /* juste sous le header (999) */
+      }
+      .menu-overlay.open{
+        display:block;
+      }
+    }
+
     .section-kicker {
       color: var(--muted);
       font-size: 0.7rem;
@@ -658,6 +676,7 @@
         </nav>
       </div>
     </header>
+    <div class="menu-overlay"></div>
 
     <main>
       <section class="hero">
@@ -1024,24 +1043,54 @@
       });
     }
 
-    // Menu burger (mobile)
+    // Menu burger (mobile) + fermeture click outside / Escape / scroll
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("main-nav");
-
+    
+    function closeMenu() {
+      if (!toggle || !nav) return;
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    }
+    
+    function openMenu() {
+      if (!toggle || !nav) return;
+      nav.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.textContent = "✕";
+    }
+    
     if (toggle && nav) {
-      toggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        toggle.textContent = isOpen ? "✕" : "☰";
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation(); // évite que le click soit vu comme "outside"
+        const isOpen = nav.classList.contains("open");
+        if (isOpen) closeMenu();
+        else openMenu();
       });
-
+    
+      // Empêche un clic DANS le menu de le fermer
+      nav.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    
+      // Fermer quand on clique un lien
       nav.querySelectorAll("a").forEach((a) => {
-        a.addEventListener("click", () => {
-          nav.classList.remove("open");
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.textContent = "☰";
-        });
+        a.addEventListener("click", () => closeMenu());
       });
+    
+      // Click en dehors -> ferme
+      document.addEventListener("click", () => closeMenu());
+    
+      // Escape -> ferme
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    
+      // Scroll -> ferme (optionnel mais propre)
+      window.addEventListener("scroll", () => {
+        if (nav.classList.contains("open")) closeMenu();
+      }, { passive: true });
     }
   });
 
