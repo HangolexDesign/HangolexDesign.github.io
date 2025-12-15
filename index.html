@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Hangolex – Graphiste pour créateurs : Miniatures YouTube, Overlays Twitch & Branding</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Graphiste spécialisé dans les miniatures YouTube, overlays Twitch et visuels pour créateurs de contenu. Créations rapides, modernes et optimisées pour performer.">
-  <link rel="canonical" href="https://hangolex.com">
+  <meta name="description" content="Graphiste spécialisé dans les miniatures YouTube, overlays Twitch et visuels pour créateurs de contenu. Créations rapides, modernes et optimisées pour performer." />
+  <link rel="canonical" href="https://hangolex.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Hangolex – Graphiste pour créateurs">
-  <meta property="og:description" content="Miniatures YouTube, Overlays Twitch, Branding et visuels pour streamers et équipes esport.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://hangolex.com/images/photo.jpeg">
-  <meta property="og:url" content="https://hangolex.com">
+  <meta property="og:title" content="Hangolex – Graphiste pour créateurs" />
+  <meta property="og:description" content="Miniatures YouTube, Overlays Twitch, Branding et visuels pour streamers et équipes esport." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://hangolex.com/images/photo.jpeg" />
+  <meta property="og:url" content="https://hangolex.com/" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hangolex – Graphiste pour créateurs">
-  <meta name="twitter:description" content="Miniatures YouTube, Overlays Twitch, Identités visuelles et visuels esport.">
-  <meta name="twitter:image" content="https://hangolex.com/images/photo.jpeg">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hangolex – Graphiste pour créateurs" />
+  <meta name="twitter:description" content="Miniatures YouTube, Overlays Twitch, Identités visuelles et visuels esport." />
+  <meta name="twitter:image" content="https://hangolex.com/images/photo.jpeg" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/images/logo.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
 
   <!-- JSON-LD Person -->
   <script type="application/ld+json">
@@ -36,7 +37,7 @@
     "jobTitle": "Graphiste pour créateurs de contenu",
     "description": "Graphiste spécialisé dans les miniatures YouTube, overlays Twitch, identités visuelles et visuels événementiels.",
     "image": "https://hangolex.com/images/photo.jpeg",
-    "url": "https://hangolex.com",
+    "url": "https://hangolex.com/",
     "sameAs": [
       "https://instagram.com/hangolextv",
       "https://www.twitch.tv/hangolexTV",
@@ -45,7 +46,7 @@
     "worksFor": {
       "@type": "Organization",
       "name": "Hangolex Design",
-      "url": "https://hangolex.com"
+      "url": "https://hangolex.com/"
     }
   }
   </script>
@@ -56,7 +57,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Hangolex Design",
-    "url": "https://hangolex.com",
+    "url": "https://hangolex.com/",
     "logo": "https://hangolex.com/images/logo.png",
     "sameAs": [
       "https://instagram.com/hangolextv",
@@ -68,595 +69,495 @@
   <style>
     html { scroll-behavior: smooth; }
 
-    :root {
-      --accent: #32e0ff;
-      --accent-soft: rgba(50, 224, 255, 0.1);
-      --bg: #05060a;
-      --bg-alt: #0d1018;
-      --border: #1f2933;
-      --card: #101320;
-      --muted: #9ca3af;
-      --text: #f5f5f5;
+    :root{
+      --accent:#32e0ff;
+      --accent-soft:rgba(50,224,255,.1);
+      --border:#1f2933;
+      --card:#101320;
+      --muted:#9ca3af;
+      --text:#f5f5f5;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    a{ color:inherit; text-decoration:none; }
 
-    body {
+    body{
       background: radial-gradient(circle at top, #111827 0, #020308 55%, #000 100%);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.6;
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+      line-height:1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    /* Offset des ancres pour éviter que le header cache le début */
+    section[id] { scroll-margin-top: 110px; }
 
-    .wrapper {
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
+    /* Layout */
+    .wrapper{
+      width:100%;
+      max-width:1320px;
+      margin:0 auto;
       padding: 2rem 2.5rem;
-      padding-top: 6rem;
+      padding-top: 7.2rem; /* place pour header flottant */
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      background: transparent;
-      backdrop-filter: none;
+    /* Header flottant */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:transparent;
     }
 
-    .header-inner {
-      width: calc(100% - 5rem);
+    .header-inner{
+      width: calc(100% - 5rem);   /* 2.5rem + 2.5rem */
       max-width: 1320px;
       margin: 1rem auto 0;
       padding: 0 2.5rem;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      height:70px;
 
-      background: rgba(5, 6, 10, 0.6);
+      background: rgba(5,6,10,0.60);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 14px;
     }
 
-    .logo {
-      align-items: center;
-      display: flex;
-      font-size: 1.5rem;
-      font-weight: 700;
-      gap: 0.5rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      font-size:1.5rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .logo-img{ display:block; height:45px; width:auto; }
+
+    nav{
+      display:flex;
+      gap:1.2rem;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    nav a:hover{ color:var(--accent); }
+
+    /* Burger */
+    .nav-toggle{
+      display:none;
+      background:transparent;
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--text);
+      border-radius:12px;
+      height:40px;
+      width:44px;
+      font-size:1.2rem;
+      cursor:pointer;
     }
 
-    .logo-img { display: block; height: 45px; width: auto; }
+    .menu-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.35);
+      z-index:998;
+    }
+    .menu-overlay.open{ display:block; }
 
-    nav {
-      color: var(--muted);
-      display: flex;
-      font-size: 0.9rem;
-      gap: 1.2rem;
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0,1.9fr) minmax(0,1fr);
+      gap:2rem;
+      align-items:center;
+      padding:1.5rem 0 2.5rem;
     }
 
-    nav a:hover { color: var(--accent); }
-
-    .hero {
-      align-items: center;
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
-      padding: 1.5rem 0 2.5rem;
+    .hero-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      font-size:.75rem;
+      color:var(--muted);
+      background: rgba(15,23,42,.85);
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:.15rem .65rem;
+      margin-bottom:.7rem;
+    }
+    .hero-tag-dot{
+      width:6px; height:6px;
+      background:#22c55e;
+      border-radius:999px;
+      box-shadow:0 0 6px #22c55e;
     }
 
-    .hero-tag {
-      align-items: center;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      display: inline-flex;
-      font-size: 0.75rem;
-      gap: 0.4rem;
-      margin-bottom: 0.7rem;
-      padding: 0.15rem 0.65rem;
-    }
-
-    .hero-tag-dot {
-      background: #22c55e;
-      border-radius: 999px;
-      box-shadow: 0 0 6px #22c55e;
-      height: 6px;
-      width: 6px;
-    }
-
-    .hero h1 {
+    .hero h1{
       font-size: clamp(2rem, 3vw + 1rem, 3rem);
-      margin-bottom: 0.8rem;
-      max-width: 2000px;
+      margin-bottom:.8rem;
+      max-width:2000px;
+    }
+    .hero h1 span{ color:var(--accent); }
+
+    .hero-sub{
+      color:var(--muted);
+      font-size:.98rem;
+      margin-bottom:1.4rem;
+      max-width:34rem;
     }
 
-    .hero h1 span { color: var(--accent); }
-
-    .hero-sub {
-      color: var(--muted);
-      font-size: 0.98rem;
-      margin-bottom: 1.4rem;
-      max-width: 34rem;
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin-bottom:1.5rem;
+    }
+    .hero-badge{
+      background: rgba(15,23,42,.70);
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.8rem;
+      padding:.15rem .6rem;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.8rem;
     }
 
-    .hero-badge {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      padding: 0.15rem 0.6rem;
+    .hero-photo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .hero-photo img{
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid var(--accent);
+      box-shadow:0 0 10px var(--accent);
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.4rem;
+      padding:.6rem 1.4rem;
+      border-radius:999px;
+      border:1px solid transparent;
+      cursor:pointer;
+      font-size:.9rem;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#020617;
+      font-weight:600;
+      box-shadow:0 0 10px var(--accent);
+    }
+    .btn-outline{
+      background:transparent;
+      border-color:var(--border);
+      color:var(--text);
     }
 
-    .hero-photo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* Sections */
+    .section{ padding:2.5rem 0 0; }
+
+    .section-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:1rem;
+      margin-bottom:1.4rem;
     }
-
-    .hero-photo img {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 10px var(--accent);
+    .section-kicker{
+      color:var(--muted);
+      font-size:.7rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:.3rem;
     }
+    .section-title{ font-size:1.2rem; font-weight:600; }
+    .section-sub{ color:var(--muted); font-size:.9rem; max-width:32rem; }
 
-    .btn {
-      align-items: center;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      cursor: pointer;
-      display: inline-flex;
-      font-size: 0.9rem;
-      gap: 0.4rem;
-      padding: 0.6rem 1.4rem;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-      color: #020617;
-      font-weight: 600;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--text);
-    }
-
-    .btn-outline span { color: var(--muted); font-size: 0.78rem; }
-
-    .section { padding: 2.5rem 0 0; }
-
-    .section-header {
-      align-items: flex-end;
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      margin-bottom: 1.4rem;
-    }
-
-    .section-kicker {
-      color: var(--muted);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-    }
-
-    .section-title { font-size: 1.2rem; font-weight: 600; }
-
-    .section-sub { color: var(--muted); font-size: 0.9rem; max-width: 32rem; }
-
-    .cards {
-      display: grid;
-      gap: 1rem;
+    .cards{
+      display:grid;
+      gap:1rem;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 140px;
-      padding: 1rem;
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:.9rem;
+      padding:1rem;
+      min-height:140px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
+    .card-title{ font-size:.98rem; font-weight:600; margin-bottom:.35rem; }
+    .card-text{ color:var(--muted); font-size:.88rem; margin-bottom:.4rem; }
+    .card-tag{ color:var(--accent); font-size:.75rem; }
 
-    .card-title { font-size: 0.98rem; font-weight: 600; margin-bottom: 0.35rem; }
-
-    .card-text { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.4rem; }
-
-    .card-tag { color: var(--accent); font-size: 0.75rem; }
-
-    .projects-grid {
-      display: grid;
-      gap: 1rem;
+    /* Projets */
+    .projects-grid{
+      display:grid;
+      gap:1rem;
       grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
     }
-
-    .project {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+    .project{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:.9rem;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .project-thumb{
+      border-radius:.8rem;
+      overflow:hidden;
+      padding:0;
+      background:none;
+    }
+    .project-thumb img{ width:100%; height:auto; display:block; }
+    .project-body{ padding:.9rem; }
+    .project-title{ font-size:.95rem; font-weight:600; margin-bottom:.25rem; }
+    .project-meta{ color:var(--muted); font-size:.8rem; margin-bottom:.4rem; }
+    .project-tags{ display:flex; flex-wrap:wrap; gap:.3rem; font-size:.75rem; }
+    .project-tag{
+      background: rgba(15,23,42,.8);
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:.1rem .5rem;
     }
 
-    .project-thumb {
-      background: radial-gradient(circle at top, #1f2937, #020617 65%);
-      border-radius: 0.8rem;
-      overflow: hidden;
-      padding: 0.35rem;
+    /* Tarifs */
+    .pricing-badge{
+      color:var(--muted);
+      font-size:.75rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:.3rem;
     }
+    .pricing-price{ font-size:1.4rem; font-weight:600; margin-bottom:.25rem; }
+    .pricing-price span{ color:var(--muted); font-size:.85rem; font-weight:400; margin-left:.25rem; }
+    .pricing-note{ color:var(--muted); font-size:.8rem; margin-top:.4rem; }
 
-    .project-body { padding: 0.9rem; }
-
-    .project-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; }
-
-    .project-meta { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.4rem; }
-
-    .project-tags { display: flex; flex-wrap: wrap; font-size: 0.75rem; gap: 0.3rem; }
-
-    .project-tag {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.1rem 0.5rem;
-    }
-
-    .pricing-badge {
-      color: var(--muted);
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-    }
-
-    .pricing-price { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.25rem; }
-
-    .pricing-price span {
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 400;
-      margin-left: 0.25rem;
-    }
-
-    .pricing-note { color: var(--muted); font-size: 0.8rem; margin-top: 0.4rem; }
-
-    .contact-section {
-      margin-top: 3rem;
-      padding: 2rem;
-      display: grid;
+    /* Contact */
+    .contact-section{
+      margin-top:3rem;
+      padding:2rem;
+      display:grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 2.5rem;
-      background: rgba(15, 23, 42, 0.4);
-      border: 1px solid rgba(50, 224, 255, 0.2);
-      border-radius: 1rem;
+      gap:2.5rem;
+      background: rgba(15,23,42,.40);
+      border:1px solid rgba(50,224,255,.20);
+      border-radius:1rem;
     }
+    .contact-left{ display:flex; flex-direction:column; gap:1rem; }
+    .contact-title{ font-size:1.8rem; font-weight:700; }
+    .contact-text{ color:var(--muted); max-width:28rem; }
+    .contact-infos{ margin-top:1rem; display:flex; flex-direction:column; gap:.3rem; color:var(--muted); }
 
-    .contact-left { display: flex; flex-direction: column; gap: 1rem; }
-
-    .contact-title { font-size: 1.8rem; font-weight: 700; color: var(--text); }
-
-    .contact-text { color: var(--muted); max-width: 28rem; }
-
-    .contact-infos {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      color: var(--muted);
-    }
-
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-    .form-row { display: flex; gap: 1rem; }
+    .contact-form{ display:flex; flex-direction:column; gap:1rem; }
+    .form-row{ display:flex; gap:1rem; }
 
     .contact-form input,
     .contact-form select,
-    .contact-form textarea {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 0.8rem 1rem;
-      color: var(--text);
-      font-size: 0.9rem;
-      font-family: inherit;
+    .contact-form textarea{
+      width:100%;
+      background: rgba(15,23,42,.70);
+      border:1px solid var(--border);
+      border-radius:.5rem;
+      padding:.8rem 1rem;
+      color:var(--text);
+      font-size:.9rem;
+      font-family:inherit;
     }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { font-family: inherit; }
-
-    .contact-form select { cursor: pointer; }
-
-    .contact-form textarea { min-height: 140px; resize: vertical; }
-
+    .contact-form textarea{ min-height:140px; resize:vertical; }
     .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent-soft);
+    .contact-form select:focus,
+    .contact-form textarea:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 0 10px var(--accent-soft);
     }
 
-    .btn-contact {
+    .btn-contact{
+      background:var(--accent);
+      border:none;
+      color:#020617;
+      padding:.9rem;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .btn-contact:hover{
+      background:#4beaff;
+      box-shadow:0 0 12px var(--accent);
+    }
+
+    footer{
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      font-size:.75rem;
+      padding:1.8rem 0 1rem;
+    }
+
+    /* Popup */
+    .popup-success{
+      position:fixed;
+      top:20px;
+      right:-320px;
       background: var(--accent);
-      border: none;
-      color: #020617;
-      padding: 0.9rem;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
+      color:#020617;
+      padding:12px 20px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:.95rem;
+      box-shadow:0 0 15px rgba(50,224,255,.4);
+      transition:right .3s ease;
+      z-index:9999;
+    }
+    .popup-success.visible{ right:20px; }
+
+    /* Responsive */
+    @media (max-width: 850px){
+      .contact-section{ grid-template-columns: 1fr; }
+      .form-row{ flex-direction:column; }
     }
 
-    .btn-contact:hover { background: #4beaff; box-shadow: 0 0 12px var(--accent); }
-
-    footer {
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 0.75rem;
-      gap: 1rem;
-      justify-content: space-between;
-      padding: 1.8rem 0 1rem;
-    }
-
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent); }
-
-    /* Burger button */
-    .nav-toggle{
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.10);
-      color: var(--text);
-      border-radius: 12px;
-      height: 40px;
-      width: 44px;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    /* Overlay mobile */
-    .menu-overlay { display: none; }
-
-    @media (max-width: 850px) {
-      .contact-section { grid-template-columns: 1fr; }
-      .form-row { flex-direction: column; }
-    }
-
-    /* MOBILE FIXES + BURGER MENU */
-    @media (max-width: 800px) {
+    @media (max-width: 800px){
       .wrapper{
-        padding: 1.25rem;
-        padding-top: 6.7rem; /* laisse la place au header fixed */
+        padding:1.25rem;
+        padding-top:6.7rem;
       }
 
       .header-inner{
         width: calc(100% - 2.5rem);
-        margin: 0.85rem auto 0;
+        margin: .85rem auto 0;
         padding: 0 1rem;
-        position: relative;
-        height: 64px;
+        height:64px;
+        position:relative;
       }
 
-      .logo{
-        font-size: 1.05rem;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
+      .logo{ font-size:1.05rem; letter-spacing:.06em; }
+      .logo-img{ height:40px; }
 
-      .logo-img{ height: 40px; }
-
-      /* bouton burger */
       .nav-toggle{
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
       }
 
-      /* overlay */
-      .menu-overlay{
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.35);
-        z-index: 998; /* juste sous le header (999) */
-      }
-      .menu-overlay.open{ display: block; }
-
-      /* menu caché */
+      /* nav en dropdown */
       nav{
-        display: none;
-        position: absolute;
+        display:none;
+        position:absolute;
         top: calc(100% + 10px);
-        left: 0;
-        right: 0;
+        left:0;
+        right:0;
 
-        background: rgba(5, 6, 10, 0.92);
+        background: rgba(5,6,10,.92);
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255,255,255,0.06);
         border-radius: 14px;
-        padding: 0.6rem;
-
-        gap: 0.4rem;
+        padding: .6rem;
+        gap: .4rem;
       }
-
       nav.open{
-        display: grid;
+        display:grid;
         grid-template-columns: 1fr 1fr;
       }
-
       nav a{
-        padding: 0.7rem 0.9rem;
-        border-radius: 12px;
-        text-align: center;
-        color: var(--muted);
+        padding:.7rem .9rem;
+        border-radius:12px;
+        text-align:center;
+        color:var(--muted);
       }
-
-      nav a:active,
-      nav a:hover{
+      nav a:hover,
+      nav a:active{
         background: rgba(255,255,255,0.06);
         color: var(--text);
       }
 
-      /* ✅ HERO: 1 colonne + photo dessous */
       .hero{
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem 0 2rem;
+        grid-template-columns:1fr;
+        gap:1.5rem;
+        padding:1rem 0 2rem;
       }
-
-      .hero > div:first-child{ order: 1; }
-      .hero-photo{ order: 2; }
-
-      .hero h1{
-        font-size: clamp(1.8rem, 6vw, 2.3rem);
-        max-width: 100%;
-      }
-
-      .hero-sub{
-        font-size: 0.9rem;
-        max-width: 100%;
-      }
-
-      .hero-actions{
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn{
-        justify-content: center;
-        width: 100%;
-      }
-
       .hero-photo img{
         width: min(260px, 78vw);
         height: min(260px, 78vw);
       }
-
-      /* ✅ SERVICES/TARIFS: 1 colonne */
-      .cards{
-        grid-template-columns: 1fr;
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
       }
+      .hero-actions .btn{ width:100%; }
 
-      /* ✅ PROJETS: 1 colonne (un en dessous de l'autre) */
-      .projects-grid{
-        grid-template-columns: 1fr;
-      }
+      .cards{ grid-template-columns:1fr; }
+      .projects-grid{ grid-template-columns:1fr; }
 
-      .section { padding: 2rem 0 0; }
-
-      .section-header{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      footer{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    .popup-success {
-      position: fixed;
-      top: 20px;
-      right: -300px;
-      background: #32e0ff;
-      color: #020617;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 0 15px rgba(50, 224, 255, 0.4);
-      transition: right 0.3s ease;
-      z-index: 9999;
-    }
-
-    .popup-success.visible { right: 20px; }
-
-    .hero-banner img {
-      width: 100%;
-      max-height: 260px;
-      object-fit: contain;
-      border-radius: 1rem;
+      .section{ padding:2rem 0 0; }
+      .section-header{ flex-direction:column; align-items:flex-start; }
+      footer{ flex-direction:column; align-items:flex-start; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo" id="logo-link">
+        <img src="images/logo.png" alt="Logo Hangolex Design" class="logo-img" />
+        HANGOLEX DESIGN
+      </a>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+      <nav id="main-nav">
+        <a href="#services">Services</a>
+        <a href="#projects">Projets</a>
+        <a href="#avis">Avis</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="menu-overlay" aria-hidden="true"></div>
+
   <div class="wrapper">
-    <header>
-      <div class="header-inner">
-        <a href="/" class="logo" id="logo-link">
-          <img src="images/logo.png" alt="Logo Hangolex Design" class="logo-img">
-          HANGOLEX DESIGN
-        </a>
-
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
-          ☰
-        </button>
-
-        <nav id="main-nav">
-          <a href="#services">Services</a>
-          <a href="#projects">Projets</a>
-          <a href="#pricing">Tarifs</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <div class="menu-overlay"></div>
-
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="hero-tag">
             <span class="hero-tag-dot"></span>
             Disponible pour de nouveaux projets
           </div>
-          <h1>
-            Des visuels <span>pensés pour</span> les créateurs de contenu.
-          </h1>
+
+          <h1>Des visuels <span>pensés pour</span> les créateurs de contenu.</h1>
+
           <p class="hero-sub">
-            Je m’appelle Hangolex, je suis graphiste mais aussi streamer sur Twitch. Je crée
-            des miniatures YouTube, des affiches, des overlays et plein d'autres types de visuels
-            pour les créateurs de contenu et organisations esport. L’objectif : proposer des visuels
-            pensés par quelqu'un qui connaît vraiment les besoins des créateurs.
+            Je m’appelle Hangolex, je suis graphiste mais aussi streamer sur Twitch. Je crée des miniatures YouTube,
+            des affiches, des overlays et plein d'autres types de visuels pour les créateurs de contenu et organisations esport.
+            L’objectif : proposer des visuels pensés par quelqu'un qui connaît vraiment les besoins des créateurs.
           </p>
 
           <div class="hero-badges">
@@ -672,10 +573,11 @@
         </div>
 
         <div class="hero-photo">
-          <img src="images/photo.jpeg" alt="Photo de Hangolex, graphiste pour créateur de contenu">
+          <img src="images/photo.jpeg" alt="Photo de Hangolex, graphiste pour créateurs de contenu" />
         </div>
       </section>
 
+      <!-- SERVICES -->
       <section id="services" class="section">
         <div class="section-header">
           <div>
@@ -696,9 +598,7 @@
           <article class="card">
             <div>
               <h3 class="card-title">Identités visuelles &amp; Branding</h3>
-              <p class="card-text">
-                Identités visuelles conçues pour renforcer l’image de marque et assurer une esthétique cohérente.
-              </p>
+              <p class="card-text">Identités visuelles conçues pour renforcer l’image de marque et assurer une esthétique cohérente.</p>
             </div>
             <div class="card-tag">Idéal pour se démarquer avec un style unique</div>
           </article>
@@ -706,9 +606,7 @@
           <article class="card">
             <div>
               <h3 class="card-title">Visuels pour événements</h3>
-              <p class="card-text">
-                Visuels événementiels réalisés pour dynamiser la communication et valoriser chaque annonce.
-              </p>
+              <p class="card-text">Visuels événementiels réalisés pour dynamiser la communication et valoriser chaque annonce.</p>
             </div>
             <div class="card-tag">Idéal pour organisateurs, équipes, streamers et casters</div>
           </article>
@@ -716,15 +614,14 @@
           <article class="card">
             <div>
               <h3 class="card-title">Bannières de profil</h3>
-              <p class="card-text">
-                Bannières adaptées à tous les appareils et pour n'importe quel réseau social.
-              </p>
+              <p class="card-text">Bannières adaptées à tous les appareils et pour n'importe quel réseau social.</p>
             </div>
             <div class="card-tag">Parfait pour une présence soignée sur toutes les plateformes</div>
           </article>
         </div>
       </section>
 
+      <!-- PROJETS -->
       <section id="projects" class="section">
         <div class="section-header">
           <div>
@@ -735,8 +632,8 @@
 
         <div class="projects-grid">
           <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/minia.jpeg" alt="Miniature YouTube" style="width:100%; height:auto; display:block;">
+            <div class="project-thumb" style="aspect-ratio:16/9;">
+              <img src="images/minia.jpeg" alt="Miniature YouTube" />
             </div>
             <div class="project-body">
               <div class="project-title">Miniature YouTube</div>
@@ -750,8 +647,8 @@
           </article>
 
           <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/overlay.jpeg" alt="Overlay Twitch" style="width:100%; height:auto; display:block;">
+            <div class="project-thumb" style="aspect-ratio:16/9;">
+              <img src="images/overlay.jpeg" alt="Overlay Twitch" />
             </div>
             <div class="project-body">
               <div class="project-title">Overlay Twitch</div>
@@ -765,8 +662,8 @@
           </article>
 
           <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/affiche.jpeg" alt="Affiche tournoi esport" style="width:100%; height:auto; display:block;">
+            <div class="project-thumb" style="aspect-ratio:16/9;">
+              <img src="images/affiche.jpeg" alt="Affiche tournoi esport" />
             </div>
             <div class="project-body">
               <div class="project-title">Affiche événementielle</div>
@@ -780,8 +677,8 @@
           </article>
 
           <article class="project">
-            <div class="project-thumb" style="aspect-ratio:16/9; background:none; padding:0; border-radius:0.5rem; overflow:hidden;">
-              <img src="images/mom_is_home.jpeg" alt="Miniature Horreur Map Fortnite" style="width:100%; height:auto; display:block;">
+            <div class="project-thumb" style="aspect-ratio:16/9;">
+              <img src="images/mom_is_home.jpeg" alt="Miniature map Fortnite (horreur)" />
             </div>
             <div class="project-body">
               <div class="project-title">Miniature map Fortnite</div>
@@ -796,25 +693,27 @@
         </div>
       </section>
 
+      <!-- AVIS -->
       <section id="avis" class="section">
         <div class="section-header">
           <div>
             <div class="section-kicker">AVIS</div>
-            <div class="section-title">Ce que pensent mes clients</div>
+            <div class="section-title">Ils m’ont fait confiance</div>
           </div>
         </div>
 
         <div class="cards">
           <article class="card">
             <div>
-              <h3 class="card-title">Type de service</h3>
-              <p class="card-text">"Avis du client"</p>
+              <h3 class="card-title">Miniature YouTube</h3>
+              <p class="card-text">“Super réactif, miniature clean et CTR en hausse. Je recommande.”</p>
             </div>
-            <div class="card-tag">Nom du client</div>
+            <div class="card-tag">Client (exemple)</div>
           </article>
         </div>
       </section>
 
+      <!-- TARIFS -->
       <section id="pricing" class="section">
         <div class="section-header">
           <div>
@@ -838,9 +737,7 @@
             <div>
               <div class="pricing-badge">Overlay Twitch</div>
               <div class="pricing-price">Dès 10 CHF <span>la scène</span></div>
-              <p class="card-text">
-                Overlay de stream (start, facecam, in-game, be right back, end) pensé pour rester lisible et clean.
-              </p>
+              <p class="card-text">Overlay (start, facecam, in-game, be right back, end) pensé pour rester lisible et clean.</p>
             </div>
             <div class="pricing-note">Possibilité de pack. Par exemple : overlay + transitions + panneaux Twitch.</div>
           </article>
@@ -848,53 +745,10 @@
           <article class="card">
             <div>
               <div class="pricing-badge">Logo</div>
-              <div class="pricing-price">Dès 25 CHF<span>le logo</span></div>
+              <div class="pricing-price">Dès 25 CHF <span>le logo</span></div>
               <p class="card-text">Logo unique et moderne pour créateur, équipe ou projet.</p>
             </div>
-            <div class="pricing-note">Un logo qui peut se décliner en d'autres visuels par la suite.</div><section id="services" class="section">
-        
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div>
-              <h3 class="card-title">Miniatures et visuels YouTube</h3>
-              <p class="card-text">Miniatures YouTube créées pour attirer l’attention et améliorer le taux de clic.</p>
-            </div>
-            <div class="card-tag">Adapté aux créateurs publiant régulièrement</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Identités visuelles &amp; Branding</h3>
-              <p class="card-text">
-                Identités visuelles conçues pour renforcer l’image de marque et assurer une esthétique cohérente.
-              </p>
-            </div>
-            <div class="card-tag">Idéal pour se démarquer avec un style unique</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Visuels pour événements</h3>
-              <p class="card-text">
-                Visuels événementiels réalisés pour dynamiser la communication et valoriser chaque annonce.
-              </p>
-            </div>
-            <div class="card-tag">Idéal pour organisateurs, équipes, streamers et casters</div>
-          </article>
-
-          <article class="card">
-            <div>
-              <h3 class="card-title">Bannières de profil</h3>
-              <p class="card-text">
-                Bannières adaptées à tous les appareils et pour n'importe quel réseau social.
-              </p>
-            </div>
-            <div class="card-tag">Parfait pour une présence soignée sur toutes les plateformes</div>
-          </article>
-        </div>
-      </section>
+            <div class="pricing-note">Un logo qui peut se décliner en d'autres visuels par la suite.</div>
           </article>
 
           <article class="card">
@@ -903,18 +757,14 @@
               <div class="pricing-price">Dès 50 CHF <span>le pack</span></div>
               <p class="card-text">Logo, palette de couleurs, typographies et exemples d’utilisations.</p>
             </div>
-            <div class="pricing-note">
-              Il est possible d'ajouter d'autres éléments comme un overlay de stream, une bannière, etc.
-            </div>
+            <div class="pricing-note">Possibilité d'ajouter overlay, bannière, etc.</div>
           </article>
 
           <article class="card">
             <div>
               <div class="pricing-badge">Visuel événementiel</div>
               <div class="pricing-price">Dès 15 CHF <span>le visuel</span></div>
-              <p class="card-text">
-                Affiche de tournoi, visuel d’annonce ou post réseaux sociaux pour mettre ton événement en avant.
-              </p>
+              <p class="card-text">Affiche de tournoi, visuel d’annonce ou post réseaux sociaux pour mettre ton événement en avant.</p>
             </div>
             <div class="pricing-note">Tarif dégressif pour des affiches régulières.</div>
           </article>
@@ -923,15 +773,14 @@
             <div>
               <div class="pricing-badge">Bannière</div>
               <div class="pricing-price">Dès 20 CHF <span>la bannière</span></div>
-              <p class="card-text">
-                Bannière YouTube, Twitter (X), Discord ou autre. Adaptée à tous les appareils.
-              </p>
+              <p class="card-text">Bannière YouTube, X, Discord ou autre. Adaptée à tous les appareils.</p>
             </div>
             <div class="pricing-note">Une bannière peut être compatible avec plusieurs réseaux sociaux.</div>
           </article>
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="contact-section">
         <div class="contact-left">
           <h2 class="contact-title">Travaillons ensemble.</h2>
@@ -950,17 +799,17 @@
         </div>
 
         <form action="https://formsubmit.co/contact@hangolex.com" method="POST" class="contact-form">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Nouveau message depuis Hangolex.com">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_redirect" value="https://hangolex.com/#contact">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nouveau message depuis Hangolex.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_redirect" value="https://hangolex.com/#contact" />
 
           <div class="form-row">
-            <input type="text" name="firstname" placeholder="Prénom" required>
-            <input type="text" name="lastname" placeholder="Nom" required>
+            <input type="text" name="firstname" placeholder="Prénom" required />
+            <input type="text" name="lastname" placeholder="Nom" required />
           </div>
 
-          <input type="email" name="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" required />
 
           <select name="topic" required>
             <option value="" disabled selected>Sujet de votre demande</option>
@@ -986,11 +835,11 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // année dans le footer
+      // Année footer
       const yearSpan = document.getElementById("year");
       if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-      // Scroll en haut quand on clique sur le logo, sans #top dans l'URL
+      // Logo = scroll top + URL clean
       const logoLink = document.getElementById("logo-link");
       if (logoLink) {
         logoLink.addEventListener("click", (e) => {
@@ -1000,12 +849,11 @@
         });
       }
 
-      // Gestion du formulaire avec fetch (sans redirection FormSubmit)
+      // Form submit (AJAX) + popup
       const form = document.querySelector(".contact-form");
       if (form) {
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
-
           const formData = new FormData(form);
 
           const response = await fetch(form.action, {
@@ -1016,14 +864,14 @@
 
           if (response.ok) {
             form.reset();
-            showPopup();
+            showPopup("Message envoyé avec succès !");
           } else {
             alert("Une erreur est survenue. Essaie encore !");
           }
         });
       }
 
-      // Menu burger (mobile) + overlay + fermeture click outside / Escape / scroll
+      // Burger menu
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.getElementById("main-nav");
       const overlay = document.querySelector(".menu-overlay");
@@ -1058,15 +906,10 @@
           a.addEventListener("click", () => closeMenu());
         });
 
-        if (overlay) {
-          overlay.addEventListener("click", () => closeMenu());
-        }
+        if (overlay) overlay.addEventListener("click", closeMenu);
 
-        document.addEventListener("click", () => closeMenu());
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeMenu();
-        });
+        document.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
         window.addEventListener("scroll", () => {
           if (nav.classList.contains("open")) closeMenu();
@@ -1074,10 +917,10 @@
       }
     });
 
-    function showPopup() {
+    function showPopup(text) {
       const popup = document.createElement("div");
       popup.className = "popup-success";
-      popup.innerText = "Message envoyé avec succès !";
+      popup.innerText = text;
 
       document.body.appendChild(popup);
 
